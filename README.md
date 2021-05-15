@@ -6,7 +6,7 @@ jleveldb-cli
 ## Installation
 
 ```
-git install -a -v https://github.com/johnsonjh/jleveldb-cli
+go install -a -v https://github.com/johnsonjh/jleveldb-cli
 ```
 
 ## Usage
