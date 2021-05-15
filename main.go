@@ -8,16 +8,20 @@ import (
 )
 
 func main() {
-	database := flag.String("d", "database", "database dir")
+	database := flag.String(
+		"d", "database", "database dir")
 	flag.Parse()
 
 	session, err := NewSession(*database)
 	if err != nil {
-		fmt.Printf("Create/Open database %s error: %s\n", *database, err.Error())
+		fmt.Printf(
+			"Create/Open database %s error: %s\n", *database, err.Error())
 		os.Exit(1)
 	}
-	fmt.Printf("Create/Open database %s successful.\n", *database)
-	fmt.Print("> ")
+	fmt.Printf(
+		"Create/Open database %s successful.\n", *database)
+	fmt.Print(
+		"> ")
 
 	reader := bufio.NewReader(os.Stdin)
 
@@ -25,6 +29,7 @@ func main() {
 		cmd, _ := reader.ReadString('\n')
 		cmd = cmd[:len(cmd)-1]
 		session.Exec(cmd)
-		fmt.Print("> ")
+		fmt.Print(
+			"> ")
 	}
 }

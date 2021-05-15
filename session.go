@@ -41,7 +41,8 @@ func (s *Session) Exec(cmd string) {
 	case "del":
 		s.del(cmds)
 	default:
-		fmt.Printf("Unknow cmd %s.\n", cmd)
+		fmt.Printf(
+			"Unknown cmd %s.\n", cmd)
 		printHelp()
 	}
 }
@@ -56,7 +57,8 @@ func (s *Session) keys() {
 	iter.Release()
 	err := iter.Error()
 	if err != nil {
-		fmt.Printf("Error: %s\n", err.Error())
+		fmt.Printf(
+			"Error: %s\n", err.Error())
 	} else {
 		fmt.Print(keys)
 	}
@@ -64,12 +66,14 @@ func (s *Session) keys() {
 
 func (s *Session) get(cmds []string) {
 	if len(cmds) != 2 {
-		fmt.Println("error get cmd")
+		fmt.Println(
+			"Error: get cmd")
 		return
 	}
 	v, err := s.DB.Get([]byte(cmds[1]), nil)
 	if err != nil {
-		fmt.Printf("Error: %s\n", err.Error())
+		fmt.Printf(
+			"Error: %s\n", err.Error())
 	} else {
 		fmt.Println(string(v))
 	}
@@ -77,33 +81,38 @@ func (s *Session) get(cmds []string) {
 
 func (s *Session) put(cmds []string) {
 	if len(cmds) != 3 {
-		fmt.Println("error put cmd")
+		fmt.Println(
+			"Error: put cmd")
 		return
 	}
 	err := s.DB.Put([]byte(cmds[1]), []byte(cmds[2]), nil)
 	if err != nil {
-		fmt.Printf("Error: %s\n", err.Error())
+		fmt.Printf(
+			"Error: %s\n", err.Error())
 	}
 }
 
 func (s *Session) del(cmds []string) {
 	if len(cmds) != 2 {
-		fmt.Println("error del cmd")
+		fmt.Println(
+			"Error: del cmd")
 		return
 	}
 	err := s.DB.Delete([]byte(cmds[1]), nil)
 	if err != nil {
-		fmt.Printf("Error: %s\n", err.Error())
+		fmt.Printf(
+			"Error: %s\n", err.Error())
 	}
 }
 
 func printHelp() {
-	fmt.Println(`Commands:
+	fmt.Println(
+   `Commands:
 	keys     list the keys in the current range
 	get      get a key from the database <str>
 	put      put a key/value into the database <str>
 	del      delete a key/value from the database <str>
-	exit     quit cli
-	help     print this list of REPL commands
-	`)
+	exit     quit
+	help     display list of commands
+   `)
 }

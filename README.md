@@ -1,7 +1,7 @@
 jleveldb-cli
 ============
 
-> A REPL for [jleveldb](https://github.com/johnsonjh/jleveldb)
+`jleveldb-cli` is a CLI REPL for [jleveldb](https://github.com/johnsonjh/jleveldb)
 
 ## Installation
 
