@@ -1,19 +1,16 @@
-Go LevelDB Cli
-==============
+jleveldb-cli
+============
 
-> A cli for [goleveldb](https://github.com/syndtr/goleveldb)
+> A REPL for [jleveldb](https://github.com/johnsonjh/jleveldb)
 
-## Install
+## Installation
 
 ```
-git clone https://github.com/ququzone/goleveldb-cli.git
-cd goleveldb-cli
-dep ensure
-go build .
+git install -a -v https://github.com/johnsonjh/jleveldb-cli
 ```
 
 ## Usage
 
 ```
-./goleveldb-cli -d xxx.db
+./jleveldb-cli -d xxx.db
 ```

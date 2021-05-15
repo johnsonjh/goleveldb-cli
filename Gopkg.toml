@@ -1,6 +1,0 @@
-[prune]
-  go-tests = true
-
-[[constraint]]
-  branch = "master"
-  name = "github.com/syndtr/goleveldb"

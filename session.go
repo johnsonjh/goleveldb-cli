@@ -5,7 +5,7 @@ import (
 	"os"
 	"strings"
 
-	"github.com/syndtr/goleveldb/leveldb"
+	"github.com/johnsonjh/jleveldb/leveldb"
 )
 
 // Session ...
