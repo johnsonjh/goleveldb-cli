@@ -107,7 +107,7 @@ func (s *Session) del(cmds []string) {
 
 func printHelp() {
 	fmt.Println(
-   `Commands:
+		`Commands:
 	keys     list the keys in the current range
 	get      get a key from the database <str>
 	put      put a key/value into the database <str>
